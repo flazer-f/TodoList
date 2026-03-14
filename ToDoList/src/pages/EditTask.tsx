@@ -43,7 +43,7 @@ export default function EditTask() {
     }
   };
 
-  if (loading) return <div style={{textAlign: 'center', marginTop: '4rem'}}>Loading task...</div>;
+  if (loading) return <div style={{ textAlign: 'center', marginTop: '4rem' }}>Loading task...</div>;
 
   return (
     <div>
@@ -53,27 +53,27 @@ export default function EditTask() {
         </button>
         <h2>Edit Task</h2>
       </div>
-      
+
       <form onSubmit={handleSubmit} style={{ background: 'var(--card-bg)', padding: '2rem', borderRadius: '16px', border: '1px solid var(--card-border)', backdropFilter: 'blur(10px)' }}>
         <div className="form-group">
           <label htmlFor="title">Task Title</label>
-          <input 
-            type="text" 
-            id="title" 
-            value={title} 
-            onChange={(e) => setTitle(e.target.value)} 
-            placeholder="e.g. Redesign landing page" 
-            required 
+          <input
+            type="text"
+            id="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="e.g. Redesign landing page"
+            required
             autoFocus
           />
         </div>
 
         <div className="form-group">
           <label htmlFor="description">Description (optional)</label>
-          <textarea 
-            id="description" 
-            value={description} 
-            onChange={(e) => setDescription(e.target.value)} 
+          <textarea
+            id="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
             placeholder="Add some details about this task..."
             style={{
               width: '100%',
@@ -95,13 +95,13 @@ export default function EditTask() {
 
         <div className="form-group">
           <label htmlFor="status">Status</label>
-          <select 
-            id="status" 
-            value={status} 
+          <select
+            id="status"
+            value={status}
             onChange={(e) => setStatus(e.target.value as 'Complete' | 'Incomplete')}
           >
-            <option value="Incomplete" style={{color: '#000'}}>Incomplete</option>
-            <option value="Complete" style={{color: '#000'}}>Complete</option>
+            <option value="Incomplete" style={{ color: '#000' }}>Incomplete</option>
+            <option value="Complete" style={{ color: '#000' }}>Complete</option>
           </select>
         </div>
 
