@@ -4,3 +4,9 @@ export interface Task {
   description?: string;
   status: 'Complete' | 'Incomplete';
 }
+
+export interface User {
+  id: string;
+  username: string;
+  email: string;
+}
