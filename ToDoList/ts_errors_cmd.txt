@@ -1,0 +1,5 @@
+src/api.ts(1,10): error TS1484: 'Task' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/components/TaskCard.tsx(1,10): error TS1484: 'Task' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/pages/AddTask.tsx(4,1): error TS6133: 'Task' is declared but its value is never read.
+src/pages/AddTask.tsx(4,10): error TS1484: 'Task' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/pages/Home.tsx(3,10): error TS1484: 'Task' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
