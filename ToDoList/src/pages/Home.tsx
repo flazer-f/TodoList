@@ -66,19 +66,19 @@ export default function Home() {
       return 0; // Default: insertion order (as returned by API)
     });
 
-  if (loading) return <div style={{ textAlign: 'center', marginTop: '4rem' }}>Loading tasks...</div>;
+  if (loading) return <div className="loading-state">Loading tasks...</div>;
 
   return (
     <div>
-      <div className="header" style={{ marginBottom: '1.5rem', alignItems: 'center' }}>
-        <h2>Your Tasks <span style={{ color: 'var(--text-secondary)', fontSize: '1rem', fontWeight: 'normal' }}>({tasks.length})</span></h2>
+      <div className="header page-header">
+        <h2>Your Tasks <span className="task-count">({tasks.length})</span></h2>
         <Link to="/add" className="btn btn-primary" style={{ textDecoration: 'none' }}>
           <i className="fi fi-rr-plus"></i> New Task
         </Link>
       </div>
 
-      <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
-        <div style={{ flex: '1 1 200px' }}>
+      <div className="filter-bar">
+        <div className="search-input">
           <input
             type="text"
             placeholder="Search tasks..."
@@ -86,18 +86,18 @@ export default function Home() {
             onChange={e => setSearchQuery(e.target.value)}
           />
         </div>
-        <div style={{ flex: '1 1 150px' }}>
+        <div>
           <select value={filterStatus} onChange={e => setFilterStatus(e.target.value as any)}>
-            <option value="All" style={{ color: '#000' }}>All Statuses</option>
-            <option value="Incomplete" style={{ color: '#000' }}>Incomplete</option>
-            <option value="Complete" style={{ color: '#000' }}>Complete</option>
+            <option value="All" className="select-option">All Statuses</option>
+            <option value="Incomplete" className="select-option">Incomplete</option>
+            <option value="Complete" className="select-option">Complete</option>
           </select>
         </div>
-        <div style={{ flex: '1 1 150px' }}>
+        <div>
           <select value={sortBy} onChange={e => setSortBy(e.target.value as any)}>
-            <option value="Default" style={{ color: '#000' }}>Sort by Default</option>
-            <option value="Name" style={{ color: '#000' }}>Sort by Name</option>
-            <option value="Status" style={{ color: '#000' }}>Sort by Status</option>
+            <option value="Default" className="select-option">Sort by Default</option>
+            <option value="Name" className="select-option">Sort by Name</option>
+            <option value="Status" className="select-option">Sort by Status</option>
           </select>
         </div>
       </div>

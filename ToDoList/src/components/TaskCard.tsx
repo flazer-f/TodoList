@@ -19,23 +19,15 @@ export default function TaskCard({ task, onToggle, onDelete }: Props) {
         >
           <i className="fi fi-rr-check"></i>
         </div>
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '4px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <h3 className="task-title" style={{ margin: 0 }}>{task.title}</h3>
+        <div className="task-info">
+          <div className="task-header-row">
+            <h3 className="task-title">{task.title}</h3>
             <span className={`status-badge ${isComplete ? 'complete' : 'incomplete'}`}>
               {task.status}
             </span>
           </div>
           {task.description && (
-            <p style={{ 
-              margin: 0, 
-              color: 'var(--text-secondary)',
-              fontSize: '0.9rem',
-              display: '-webkit-box',
-              WebkitLineClamp: 2,
-              WebkitBoxOrient: 'vertical',
-              overflow: 'hidden'
-            }}>
+            <p className="task-description">
               {task.description}
             </p>
           )}

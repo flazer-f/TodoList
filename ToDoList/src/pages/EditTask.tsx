@@ -43,18 +43,18 @@ export default function EditTask() {
     }
   };
 
-  if (loading) return <div style={{ textAlign: 'center', marginTop: '4rem' }}>Loading task...</div>;
+  if (loading) return <div className="loading-state">Loading task...</div>;
 
   return (
     <div>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
-        <button className="btn-icon" onClick={() => navigate(-1)}>
+      <div className="page-header">
+        <button className="btn-icon" onClick={() => navigate(-1)} aria-label="Go back">
           <i className="fi fi-rr-arrow-left"></i>
         </button>
         <h2>Edit Task</h2>
       </div>
 
-      <form onSubmit={handleSubmit} style={{ background: 'var(--card-bg)', padding: '2rem', borderRadius: '16px', border: '1px solid var(--card-border)', backdropFilter: 'blur(10px)' }}>
+      <form onSubmit={handleSubmit} className="form-container">
         <div className="form-group">
           <label htmlFor="title">Task Title</label>
           <input
@@ -72,24 +72,10 @@ export default function EditTask() {
           <label htmlFor="description">Description (optional)</label>
           <textarea
             id="description"
+            className="form-textarea"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Add some details about this task..."
-            style={{
-              width: '100%',
-              padding: '1rem 1.5rem',
-              borderRadius: '12px',
-              border: '1px solid var(--card-border)',
-              background: 'var(--card-bg)',
-              color: 'var(--text-primary)',
-              fontFamily: 'inherit',
-              fontSize: '1rem',
-              outline: 'none',
-              transition: 'all 0.3s ease',
-              backdropFilter: 'blur(10px)',
-              minHeight: '100px',
-              resize: 'vertical'
-            }}
           />
         </div>
 
@@ -105,8 +91,8 @@ export default function EditTask() {
           </select>
         </div>
 
-        <div style={{ display: 'flex', gap: '1rem', marginTop: '2.5rem' }}>
-          <button type="button" className="btn" style={{ background: 'transparent', border: '1px solid var(--card-border)' }} onClick={() => navigate(-1)}>
+        <div className="form-actions">
+          <button type="button" className="btn btn-outline" onClick={() => navigate(-1)}>
             Cancel
           </button>
           <button type="submit" className="btn btn-primary" disabled={submitting}>
