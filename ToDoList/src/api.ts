@@ -1,6 +1,6 @@
 import type { Task } from './types';
 
-const API_URL = 'http://localhost:3001/tasks';
+const API_URL = 'http://localhost:5000/tasks';
 
 export const getTasks = async (): Promise<Task[]> => {
   const res = await fetch(API_URL);
